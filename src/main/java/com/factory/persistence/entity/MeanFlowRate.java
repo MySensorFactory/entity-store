@@ -1,21 +1,24 @@
 package com.factory.persistence.entity;
 
+
 import lombok.Data;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.time.ZonedDateTime;
+import javax.persistence.UniqueConstraint;
 import java.util.UUID;
 
 @Entity
-@Table(name = "counted_words", schema = "factory_data")
+@Table(name = "mean_flow_rate", schema = "factory_data",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"label", "event_key"}))
 @Data
-public class CountedWords {
+public class MeanFlowRate {
 
     @Id
     @Type(type = "pg-uuid")
@@ -23,9 +26,10 @@ public class CountedWords {
     @Column(name = "id", nullable = false, unique = true)
     private UUID id;
 
-    @Column(name = "timestamp")
-    private ZonedDateTime timestamp;
+    @Column(name = "value")
+    private Double value;
 
-    @Column(name = "letters_count")
-    private Long lettersCount;
+    @Embedded
+    private AuditData auditData;
 }
+

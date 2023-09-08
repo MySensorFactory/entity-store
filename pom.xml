@@ -38,4 +38,57 @@
     <artifactId>${project.name}</artifactId>
     <version>1.0.0</version>
 
+    <repositories>
+        <repository>
+            <id>confluent.io</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
+
+    <profiles>
+        <profile>
+            <id>empty</id>
+            <activation>
+                <property>
+                    <name>buildType</name>
+                    <value>empty</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.avro</groupId>
+                        <artifactId>avro-maven-plugin</artifactId>
+                        <version>1.8.2</version>
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>schema</goal>
+                                </goals>
+                                <configuration>
+                                    <sourceDirectory>${project.basedir}/src/main/resources/avro</sourceDirectory>
+                                    <outputDirectory>${project.build.directory}/generated/avro</outputDirectory>
+                                    <imports>
+                                        <import>${project.basedir}/src/main/resources/avro/FlowRate.avsc</import>
+                                        <import>${project.basedir}/src/main/resources/avro/GasComposition.avsc</import>
+                                        <import>${project.basedir}/src/main/resources/avro/NoiseAndVibration.avsc</import>
+                                        <import>${project.basedir}/src/main/resources/avro/Pressure.avsc</import>
+                                        <import>${project.basedir}/src/main/resources/avro/Temperature.avsc</import>
+                                        <import>${project.basedir}/src/main/resources/avro/aggregation/FlowRateAggregation.avsc</import>
+                                        <import>${project.basedir}/src/main/resources/avro/aggregation/PressureAggregation.avsc</import>
+                                        <import>${project.basedir}/src/main/resources/avro/aggregation/GasCompositionAggregation.avsc</import>
+                                        <import>${project.basedir}/src/main/resources/avro/aggregation/NoiseAndVibrationAggregation.avsc</import>
+                                        <import>${project.basedir}/src/main/resources/avro/aggregation/TemperatureAggregation.avsc</import>
+                                    </imports>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
 </project>
