@@ -1,0 +1,44 @@
+{
+  "namespace": "com.factory.message",
+  "type": "record",
+  "name": "GasComposition",
+  "fields": [
+    {
+      "name": "label",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "data",
+      "type": {
+        "name": "GasCompositionDataRecord",
+        "type": "record",
+        "fields": [
+          {
+            "name": "h2",
+            "type": "float"
+          },
+          {
+            "name": "n2",
+            "type": "float"
+          },
+          {
+            "name": "nh3",
+            "type": "float"
+          },
+          {
+            "name": "o2",
+            "type": "float"
+          },
+          {
+            "name": "co2",
+            "type": "float"
+          }
+        ]
+      }
+    }
+  ]
+}

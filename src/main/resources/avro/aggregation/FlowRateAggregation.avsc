@@ -1,0 +1,15 @@
+{
+  "namespace": "com.factory.message",
+  "type": "record",
+  "name": "FlowRateAggregation",
+  "fields": [
+    {
+      "name": "data",
+      "type": "com.factory.message.FlowRate"
+    },
+    {
+      "name": "count",
+      "type": "int"
+    }
+  ]
+}

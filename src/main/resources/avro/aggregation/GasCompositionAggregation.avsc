@@ -1,0 +1,15 @@
+{
+  "namespace": "com.factory.message",
+  "type": "record",
+  "name": "GasCompositionAggregation",
+  "fields": [
+    {
+      "name": "data",
+      "type": "com.factory.message.GasComposition"
+    },
+    {
+      "name": "count",
+      "type": "int"
+    }
+  ]
+}

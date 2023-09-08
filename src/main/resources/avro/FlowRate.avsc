@@ -1,0 +1,28 @@
+{
+  "namespace": "com.factory.message",
+  "type": "record",
+  "name": "FlowRate",
+  "fields": [
+    {
+      "name": "label",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "data",
+      "type": {
+        "name": "FlowRateDataRecord",
+        "type": "record",
+        "fields": [
+          {
+            "name": "flowRate",
+            "type": "float"
+          }
+        ]
+      }
+    }
+  ]
+}

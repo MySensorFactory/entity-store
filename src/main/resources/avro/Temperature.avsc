@@ -1,0 +1,28 @@
+{
+  "namespace": "com.factory.message",
+  "type": "record",
+  "name": "Temperature",
+  "fields": [
+    {
+      "name": "label",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "data",
+      "type": {
+        "name": "TemperatureDataRecord",
+        "type": "record",
+        "fields": [
+          {
+            "name": "temperature",
+            "type": "float"
+          }
+        ]
+      }
+    }
+  ]
+}

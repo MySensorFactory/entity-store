@@ -1,0 +1,28 @@
+{
+  "namespace": "com.factory.message",
+  "type": "record",
+  "name": "Pressure",
+  "fields": [
+    {
+      "name": "label",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "data",
+      "type": {
+        "name": "PressureDataRecord",
+        "type": "record",
+        "fields": [
+          {
+            "name": "pressure",
+            "type": "float"
+          }
+        ]
+      }
+    }
+  ]
+}

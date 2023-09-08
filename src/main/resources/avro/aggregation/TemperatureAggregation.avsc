@@ -1,0 +1,15 @@
+{
+  "namespace": "com.factory.message",
+  "type": "record",
+  "name": "TemperatureAggregation",
+  "fields": [
+    {
+      "name": "data",
+      "type": "com.factory.message.Temperature"
+    },
+    {
+      "name": "count",
+      "type": "int"
+    }
+  ]
+}

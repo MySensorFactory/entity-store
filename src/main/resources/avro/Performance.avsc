@@ -1,0 +1,15 @@
+{
+  "namespace": "com.factory.message",
+  "type": "record",
+  "name": "Performance",
+  "fields": [
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "value",
+      "type": "float"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "namespace": "com.factory.message",
+  "type": "record",
+  "name": "PressureAggregation",
+  "fields": [
+    {
+      "name": "data",
+      "type": "com.factory.message.Pressure"
+    },
+    {
+      "name": "count",
+      "type": "int"
+    }
+  ]
+}

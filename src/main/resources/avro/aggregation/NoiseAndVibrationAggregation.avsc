@@ -1,0 +1,15 @@
+{
+  "namespace": "com.factory.message",
+  "type": "record",
+  "name": "NoiseAndVibrationAggregation",
+  "fields": [
+    {
+      "name": "data",
+      "type": "com.factory.message.NoiseAndVibration"
+    },
+    {
+      "name": "count",
+      "type": "int"
+    }
+  ]
+}

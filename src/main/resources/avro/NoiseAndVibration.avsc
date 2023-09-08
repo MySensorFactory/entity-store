@@ -1,0 +1,45 @@
+{
+  "namespace": "com.factory.message",
+  "type": "record",
+  "name": "NoiseAndVibration",
+  "fields": [
+    {
+      "name": "label",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "noiseData",
+      "type": {
+        "name": "NoiseDataRecord",
+        "type": "record",
+        "fields": [
+          {
+            "name": "level",
+            "type": "float"
+          }
+        ]
+      }
+    },
+    {
+      "name": "vibrationData",
+      "type": {
+        "name": "VibrationDataRecord",
+        "type": "record",
+        "fields": [
+          {
+            "name": "amplitude",
+            "type": "float"
+          },
+          {
+            "name": "frequency",
+            "type": "float"
+          }
+        ]
+      }
+    }
+  ]
+}
