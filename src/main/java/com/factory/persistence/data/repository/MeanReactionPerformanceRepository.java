@@ -1,6 +1,6 @@
-package com.factory.persistence.repository;
+package com.factory.persistence.data.repository;
 
-import com.factory.persistence.entity.MeanReactionPerformance;
+import com.factory.persistence.data.entity.MeanReactionPerformance;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

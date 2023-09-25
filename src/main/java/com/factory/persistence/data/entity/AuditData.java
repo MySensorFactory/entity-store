@@ -1,4 +1,4 @@
-package com.factory.persistence.entity;
+package com.factory.persistence.data.entity;
 
 import lombok.Getter;
 import lombok.Setter;

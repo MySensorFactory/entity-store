@@ -1,4 +1,5 @@
-package com.factory.persistence.entity;
+package com.factory.persistence.data.entity;
+
 
 import lombok.Data;
 import org.hibernate.annotations.Type;
@@ -14,10 +15,10 @@ import javax.persistence.UniqueConstraint;
 import java.util.UUID;
 
 @Entity
-@Table(name = "mean_pressure", schema = "factory_data",
+@Table(name = "mean_temperature", schema = "factory_data",
         uniqueConstraints = @UniqueConstraint(columnNames = {"label", "event_key"}))
 @Data
-public class MeanPressure {
+public class MeanTemperature {
 
     @Id
     @Type(type = "pg-uuid")
@@ -31,4 +32,3 @@ public class MeanPressure {
     @Embedded
     private AuditData auditData;
 }
-
