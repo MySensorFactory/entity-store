@@ -23,11 +23,11 @@ phases:
     build:
         commands:
             - echo "Building ..."
-            - mvn -s settings.xml clean package -P {BUILD_TYPE}
+            - mvn -s settings.xml clean package -P ${BUILD_TYPE}
     post_build:
         commands:
             - echo "Publishing to artifact repository ..."
-            - mvn -s settings.xml deploy -P {BUILD_TYPE}
+            - mvn -s settings.xml deploy -P ${BUILD_TYPE}
 cache:
     paths:
         - '/root/.m2/**/*'
