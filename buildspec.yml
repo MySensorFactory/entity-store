@@ -3,7 +3,7 @@ version: 0.2
 env:
     variables:
         PROJECT_NAME: entity-store
-        BUILD_TYPE: empty
+        BUILD_TYPE: lib
 
 phases: 
     install:
