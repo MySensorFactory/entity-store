@@ -27,7 +27,7 @@ phases:
     post_build:
         commands:
             - echo "Publishing to artifact repository ..."
-            - mvn -s settings.xml deploy
+            - mvn -s settings.xml deploy -P {BUILD_TYPE}
 cache:
     paths:
         - '/root/.m2/**/*'
