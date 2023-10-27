@@ -19,7 +19,7 @@ import java.time.Duration;
 
 @DataJpaTest
 @RunWith(SpringRunner.class)
-@ContextConfiguration(initializers = {JpaIntegrationTest.Initializer.class})
+@ContextConfiguration(initializers = {JpaIntegrationTest.Initializer.class}, classes = {JpaLocalConfiguration.class})
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @SqlLoader
 @Retention(RetentionPolicy.RUNTIME)
