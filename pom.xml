@@ -82,7 +82,7 @@
 
     <name>entity-store</name>
     <artifactId>${project.name}</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <repositories>
         <repository>
@@ -93,11 +93,11 @@
 
     <profiles>
         <profile>
-            <id>empty</id>
+            <id>lib</id>
             <activation>
                 <property>
                     <name>buildType</name>
-                    <value>empty</value>
+                    <value>lib</value>
                 </property>
             </activation>
             <build>
