@@ -1,4 +1,4 @@
-package com.factory.persistence;
+package com.factory.users.persistence;
 
 import com.factory.common.JpaIntegrationTest;
 import com.factory.persistence.users.entity.Role;
@@ -7,7 +7,6 @@ import com.factory.persistence.users.repository.RoleRepository;
 import com.factory.persistence.users.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.DirtiesContext;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -19,7 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @JpaIntegrationTest
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 class UserRepositoryTest {
 
     @Autowired
