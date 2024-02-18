@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 import java.time.ZonedDateTime;
 import java.util.Set;
 import java.util.UUID;
@@ -29,7 +30,14 @@ public class Report {
     private UUID id;
 
     @Column(name = "label", unique = true)
+    @Pattern(regexp = "\\S+")
     private String label;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "description")
+    private String description;
 
     @Column(name = "from_time")
     private ZonedDateTime from;

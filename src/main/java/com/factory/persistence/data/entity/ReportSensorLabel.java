@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Pattern;
 import java.util.UUID;
 
 @Entity
@@ -37,5 +38,6 @@ public class ReportSensorLabel {
     private String sensorType;
 
     @Column(name = "label")
+    @Pattern(regexp = "\\S+")
     private String label;
 }

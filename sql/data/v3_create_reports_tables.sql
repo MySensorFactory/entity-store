@@ -1,9 +1,11 @@
 CREATE TABLE factory_data.report
 (
-    id        UUID NOT NULL,
-    label     TEXT UNIQUE,
-    from_time TIMESTAMP,
-    to_time   TIMESTAMP,
+    id          UUID NOT NULL,
+    label       TEXT UNIQUE,
+    name        TEXT,
+    description TEXT,
+    from_time   TIMESTAMP,
+    to_time     TIMESTAMP,
     PRIMARY KEY (id)
 );
 
