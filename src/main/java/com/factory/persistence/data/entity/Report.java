@@ -4,16 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 import java.time.ZonedDateTime;
+import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 
@@ -48,5 +43,22 @@ public class Report {
     @OneToMany(mappedBy = "report",
             cascade = {CascadeType.ALL},
             orphanRemoval = true)
-    private Set<ReportSensorLabel> reportSensorLabels;
+    private Set<ReportSensorLabel> reportSensorLabels = new HashSet<>();
+
+    public void update(final Report other, final Runnable flushOperation){
+        this.setLabel(other.getLabel());
+        this.setName(other.getName());
+        this.setDescription(other.getDescription());
+        this.setFrom(other.getFrom());
+        this.setTo(other.getTo());
+
+        this.getReportSensorLabels().clear();
+
+        if(Objects.nonNull(flushOperation)){
+            flushOperation.run();
+        }
+
+        this.getReportSensorLabels().addAll(other.getReportSensorLabels());
+        this.getReportSensorLabels().forEach(sl -> sl.setReport(this));
+    }
 }
